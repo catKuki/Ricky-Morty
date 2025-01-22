@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.css' integrity='sha512-gUmZC4CtgECJeVW1aeRk2AmpdQsl1ABsR8Cp4PmvANxm+TzwNNpe2MoJT/htbYsn0GR9+sIMDrd9vT9Pt0ZANA==' crossorigin='anonymous'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="characterPopup">
+        <div class="characterPopupHeader">
+            <i id="closePopup" class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="popupContainer"></div>
+    </div>
+
+    <div class="wrap">
+
+        <div class="header">
+            <div class="menu">
+               <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="a" id="homeBtn">
+                <i class="fa-solid fa-house"></i>
+                <a href="#" id="homeBtn">Home</a>
+            </div>
+            <div class="b" id="charactersBtn">
+                <i class="fa-solid fa-user"></i>
+                <a href="#" >Characters</a>
+            </div>
+            <div class="c" id="episodesBtn">
+                <i class="fa-solid fa-tv"></i>
+                <a href="#" id="episodesBtn">Episodes</a>
+            </div>
+            <div class="d" id="locationsBtn">
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="#" id="locationsBtn">Locations</a>
+            </div>
+            <div class="f" id="watchListBtn">
+                <i class="fa-solid fa-star"></i>
+                <a href="#" id="watchListBtn">Watch list</a>
+            </div>
+        </div>
+
+
+
+        <!-- homePage -->
+        <div class="homePage page">
+            <img src="./rick.png" alt="">
+        </div>
+        <!-- homePage END -->
+
+
+
+        <!-- characterPage -->
+        <div class="characterPage page">
+            <div class="filterContainer">
+                <div class="filterGroup">
+                    <input type="text" id="species" placeholder="Species">
+                    <button id="applySpecies">SEARCH</button>
+                </div>
+
+                <div class="filterGroup">
+                    <select name="gender" id="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Genderless">Genderless</option>
+                        <option value="unknown">unknown</option>
+                    </select>
+                </div>
+            </div>
+            <div class="characterContainer"></div>
+                <div class="characterPagination">
+                    <button id="prevPage">-</button>
+                    <div id="currentPage">1</div>
+                    <button id="nextPage">+</button>
+                </div>
+        <!-- caracterPage END -->
+        </div>
+
+
+        <div class="episodePage page">
+            <div class="text">
+                <h1>Episodes</h1>
+                <p>All infotmation about each episode are here. Enter your query on filters or view all. Click on card to get full info about the episode.</p>
+            </div>
+
+            <div class="filterGroup">
+                <input type="text" id="episodeName" placeholder="Name">
+                <button id="applyEpisodeName">SEARCH</button>
+            </div>
+
+            <div class="episodeContainer">
+            </div>
+
+            <div class="episodePagination">
+                <button id="prevPageEpisode">-</button>
+                <div id="currentPageEpisode">1</div>
+                <button id="nextPageEpisode">+</button>
+            </div>
+        </div>
+      
+
+
+        <div class="locationPage page">
+            <div class="text">
+                <h1>Locations</h1>
+                <p>Locations that mentioned in the cartoon. Filter or view all on this page.</p>
+            </div>
+
+            <div class="filterGroup">
+                <input type="text" id="locationName" placeholder="Name">
+                <button id="searchLocationName">SEARCH</button>
+                <input type="text" id="locationType" placeholder="Type">
+                <button id="searchLocationType">SEARCH</button>
+                <input type="text" id="locationDimension" placeholder="Dimension">
+                <button id="searchLocationDimension">SEARCH</button>
+            </div>
+
+            <div class="locationContainer">
+            </div>
+
+            <div class="locationPagination">
+                <button id="prevPageLocation">-</button>
+                <div id="currentPageLocaion">1</div>
+                <button id="nextPageLocation">+</button>
+            </div>
+        </div>
+
+
+        <div class="watchlistPage page">
+           
+            <div class="watchlistContainer"></div>
+
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+.page {
+  display: none;
+}
+
+.characterPopup {
+  width: 700px;
+  height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.characterPopup .popupContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.characterPopup .popupContainer .popupInfo {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+.characterPopup .characterPopupHeader {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.characterPopup .characterPopupHeader i {
+  cursor: pointer;
+  color: red;
+  font-size: 24px;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap .header {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+}
+.wrap .header i {
+  cursor: pointer;
+}
+.wrap .header .menu {
+  color: #fff;
+  display: none;
+}
+.wrap .header a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin: 0 10px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.wrap .header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.wrap .header div i {
+  color: #fff;
+}
+.wrap .homePage {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  background-image: url("https://m.media-amazon.com/images/S/pv-target-images/b252c3b5b477d81448b531c2fa52c93fe6888e4f4550f2118414736ad30fdfb3._SX1080_FMjpg_.jpg");
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrap .homePage img {
+  margin-left: -1100px;
+  margin-top: -550px;
+}
+.wrap .characterPage {
+  display: none;
+  background-color: #000;
+  width: 100%;
+  min-height: 90vh;
+}
+.wrap .characterPage .filterContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+  height: 10vh;
+}
+.wrap .characterPage .filterContainer .filterGroup {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.wrap .characterPage .filterContainer .filterGroup input {
+  width: 250px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 20px;
+  background-color: #333;
+  color: #fff;
+}
+.wrap .characterPage .filterContainer .filterGroup button {
+  height: 60px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: greenyellow;
+}
+.wrap .characterPage .filterContainer .filterGroup select {
+  height: 60px;
+  width: 150px;
+  outline: none;
+  font-weight: 600;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: yellowgreen;
+}
+.wrap .characterPage .characterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  padding: 50px;
+}
+.wrap .characterPage .characterContainer .character {
+  width: 300px;
+  min-height: 400px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  box-shadow: 0 0 20px grey;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+.wrap .characterPage .characterContainer .character p {
+  margin: 20px 0;
+}
+.wrap .characterPage .characterContainer .character img {
+  margin-bottom: 20px;
+}
+.wrap .characterPage .characterContainer .character button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(91, 158, 226);
+  color: #fff;
+}
+.wrap .characterPagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  align-items: center;
+  color: #fff;
+}
+.wrap .characterPagination button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
+  margin: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #fff;
+}
+.wrap .characterPagination div {
+  font-weight: 700;
+  font-size: 24px;
+  background-color: #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.episodePage {
+  width: 100%;
+  min-height: 90vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.episodePage .text {
+  text-align: center;
+}
+.episodePage .text h1 {
+  color: greenyellow;
+  margin-bottom: 30px;
+}
+.episodePage .text p {
+  color: #fff;
+  margin-bottom: 50px;
+}
+.episodePage .filterGroup {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.episodePage .filterGroup input {
+  width: 250px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 20px;
+  background-color: #333;
+  color: #fff;
+}
+.episodePage .filterGroup button {
+  height: 60px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: greenyellow;
+}
+.episodePage .episodeContainer {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.episodePage .episodeContainer .episode {
+  width: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 0 10px white;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+.episodePage .episodeContainer .episode img {
+  margin-bottom: 20px;
+}
+.episodePage .episodePagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  align-items: center;
+  color: #fff;
+}
+.episodePage .episodePagination button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
+  margin: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #fff;
+}
+.episodePage .episodePagination div {
+  font-weight: 700;
+  font-size: 24px;
+  background-color: #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationPage {
+  width: 100%;
+  min-height: 90vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.locationPage .text {
+  text-align: center;
+}
+.locationPage .text h1 {
+  color: greenyellow;
+  margin-bottom: 30px;
+}
+.locationPage .text p {
+  color: #fff;
+  margin-bottom: 50px;
+}
+.locationPage .filterGroup {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  justify-content: space-around;
+}
+.locationPage .filterGroup input {
+  width: 250px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 20px;
+  background-color: #333;
+  color: #fff;
+}
+.locationPage .filterGroup button {
+  height: 60px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: greenyellow;
+}
+.locationPage .locationContainer {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+}
+.locationPage .locationContainer .location {
+  width: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 0 10px white;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+.locationPage .locationPagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  align-items: center;
+  color: #fff;
+}
+.locationPage .locationPagination button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
+  margin: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #fff;
+}
+.locationPage .locationPagination div {
+  font-weight: 700;
+  font-size: 24px;
+  background-color: #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchlistPage {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+.watchlistPage .watchlistContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.watchlistPage .watchlistContainer .watchlistItem {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  background-color: #eee;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.watchlistPage .watchlistContainer .watchlistItem button {
+  background-color: red;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .wrap .header {
+    justify-content: flex-end;
+  }
+  .wrap .header .menu {
+    display: flex;
+  }
+  .wrap .header div {
+    display: none;
+  }
+  .wrap .characterPage .filterContainer {
+    flex-direction: column;
+  }
+  .wrap .characterPage .filterContainer input {
+    margin-bottom: 20px;
+  }
+  .wrap .characterPage .filterContainer button {
+    margin-bottom: 20px;
+  }
+  .wrap .characterPage .filterContainer select {
+    margin-bottom: 20px;
+  }
+  .wrap .locationPage .filterGroup {
+    flex-direction: column;
+  }
+  .wrap .locationPage .filterGroup input {
+    margin-bottom: 20px;
+  }
+  .wrap .locationPage .filterGroup button {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
